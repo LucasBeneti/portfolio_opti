@@ -10,6 +10,12 @@ from matplotlib import style
 # e arrumar algum jeito de fazer as regras de quantias máximas ou mínimas para os tipos
 # diferentes das acoes, por exemplo, 30% de energia, 30% de bancos e 40% tecnologias...
 
+stockAdjClose = './stock_adj_close_brl.csv'
+marketAdjClose = './market_adj_close_brl.csv'
+stockRows = 1243
+stockCols = 62
+
+
 style.use('ggplot')
 
 stocks = ['TSLA', 'AAPL', 'KO']

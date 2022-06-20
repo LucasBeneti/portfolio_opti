@@ -1,0 +1,94 @@
+Magazine Luiza (MGLU3)
+Lojas Renner (LREN3)
+Engie (EGIE3)
+Weg (WEGE3)
+Porto Seguro (PSSA3)
+Multiplan (MULT3)
+Totvs (TOTS3)
+Cosan (CSAN3)
+Natura (NTCO3)
+M. Dias Branco (MDIA3)
+EZTec (EZTC3)
+Raia Drogasil (RADL3)
+
+AMBEV S/A	ABEV3	Alimentos	3,141
+ASSAI	ASAI3	Varejo	0,566
+AZUL	AZUL4	Companhia aérea	0,569
+B2W DIGITAL	BTOW3	Varejo	0,617
+B3	B3SA3	Seguros	4,847
+BB SEGURIDADE	BBSE3	Seguros	0,729
+BR MALLS PAR	VRML3	Shopping Centers	0,373
+BRADESCO	BBDC4	Financeiro	1,189
+BRADESCO	BBDC3	Financeiro	5,016
+BRADESPAR	BRAP4	Mineração	0,728
+BANCO DO BRASIL	BBAS3	Financeiro	1,733
+BRASKEM	BRKM5	Químicos	0,566
+BRF S/A	BRFS3	Alimentos 	0,899
+CARREFOUR BR	CRFB3	Varejo	0,406
+CCR S/A	CCRO3	Bens industriais	0,633
+CEMIG	CMIG4	Energia elétrica	0,572
+CIA HERING	HGTX3	Varejo	0,098
+CIELO	CIEL3	Financeiro	0,187
+COGNA ON	COGN3	Educação	0,348
+COPEL	CPLE6	Energia Elétrica	0,369
+COSAN	CSAN3	Alimentos	0,659
+CPFL ENERGIA	CPFE3	Energia Elétrica	0,261
+CVC BRASIL	CVCB3	Viagens e lazer	0,169
+CYRELA REALT	CYRE3	Construção civil	0,328
+ECORODOVIAS	ECOR3	Bens industriais	0,09
+ELETROBRAS	ELET3	Energia elétrica	0,562
+ELETROBRAS	ELET6	Energia Elétrica	0,384
+EMBRAER	EMBR3	Bens industriais	0,542
+ENERGIAS BR	ENBR3	Energia elétrica	0,212
+ENERGISA	ENGI11	Energia elétrica	0,492
+ENEVA	ENEV3	Energia elétrica	0,857
+ENGIE BRASIL	ENGIE3	Energia elétrica	0,48
+EQUATORIAL	EQTL3	Energia elétrica	1,115
+EZTEC	EZTC3	Construção	0,144
+FLEURY	FLRY3	Saúde	0,377
+GERDAU	GGBR4	Siderurgia e Metalurgia	1,472
+GERDAU MET	GOAU4	Siderurgia e Metalurgia	0,462
+GOL	GOLL4	Bens industriais	0,144
+GRUPO NATURA	NTCO3	Varejo	1,998
+HAPVIDA	HAPV3	Saúde	0,748
+HYPERA	HYPE3	Varejo	0,642
+IGUATEMI	IGTA3	Exploração de imóveis	0,144
+INTERMEDICA	GNDI3	Saúde	2,229
+IRB BRASIL RE	IRBR3	Seguros	0,369
+ITAUSA	ITSA4	Financeiro	2,114
+ITAU UNIBANCO	ITUB4	Financeiro	5,999
+JBS	JBSS3	Alimentos 	2,279
+JHSF PART	JHSF3	Construção	0,091
+KLABIN S/A	KLBN11	Madeira e papel	1,069
+LOCALIZA	RENT3	Locação de veículos	1,719
+LOCAMERICA	LCAM3	Aluguel de Veículos	0,392
+LOJAS AMERICANAS	LAME4	Varejo	0,897
+LOJAS RENNER	LREN3	Varejo	1,486
+MAGAZINE LUIZA	MGLU3	Varejo	2,693
+MARFRIG	MRFG3	Alimentos 	0,317
+MINERVA	BEEF3	Alimentos	0,12
+MRV	MRVE3	Construção civil	0,253
+MULTIPLAN	MULT3	Shopping Centers	0,294
+PÃO DE AÇÚCAR - CBD	PCAR3	Varejo	0,275
+PETROBRAS	PETR3	Petróleo e Gás 	3,521
+PETROBRAS	PETR4	Petróleo e Gás 	4,908
+PETROBRAS BR	BRDT3	Petróleo e Gás 	1,221
+PETRORIO	PRIO3	Petróleo e Gás 	0,766
+QUALICORP	QUAL3	Saúde	0,378
+RAIADROGASIL	RADL3	Saúde	1,213
+RUMO S/A	RAIL3	Bens industriais	1,131
+SABESP	SBSP3	Saneamento	0,649
+SANTANDER BR	SANB11	Financeiro	0,634
+SID NACIONAL	CSNA3	Siderurgia e Metalurgia	1,363
+SUL AMERICA	SULA11	Seguros	0,441
+SUZANO S/A	SUZB5	Madeira e papel	2,359
+TAESA	TAEE11	Energia elétrica	0,392
+TELEF BRASIL	VIVT4	Telecomunicações	0,907
+TIM 	TIMP3	Telecomunicações	0,453
+TOTVS	TOTS3	Tecnologia	0,678
+ULTRAPAR	UGPA3	Petróleo e Gás 	1,036
+USIMINAS	USIM5	Siderurgia e Metalurgia	0,488
+VALE	VALE3	Mineração	13,85
+VIA VAREJO	VVAR3	Comércio	0,93
+WEG	WEGE3	Bens Industriais	2,577
+YDUQS PART	YDUQ3	Educação	0,443
