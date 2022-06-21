@@ -14,7 +14,8 @@ from matplotlib import style
 # diferentes das acoes, por exemplo, 30% de energia, 30% de bancos e 40% tecnologias...
 
 tickers = [
-    'ABEV3.SA',
+'^BVSP',
+'ABEV3.SA',
 'ASAI3.SA',
 'AZUL4.SA',
 # 'BTOW3',
@@ -101,7 +102,7 @@ number_of_portfolios = 5
 
 stock_returns = pd.DataFrame()
 for stock in tickers:
-  data = web.DataReader(stock, 'yahoo', start_date, end_date)
+  data = web.DataReader( stock, 'yahoo', start_date, end_date)
   data = pd.DataFrame(data)
   data[stock] = data['Adj Close']
 
@@ -111,6 +112,6 @@ for stock in tickers:
     stock_returns = stock_returns.join(data[[stock]], how='outer')
 
 print(stock_returns.head())
-stock_returns.to_csv("stock_returns_brl.csv", index=True)
+stock_returns.to_csv("test_market_returns_brl.csv", index=True)
 # test = web.DataReader(["ITUB4.SA", "FB"], 'yahoo', start_date, end_date)
 
