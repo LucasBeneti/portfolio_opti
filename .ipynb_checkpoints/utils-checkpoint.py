@@ -1,45 +1,44 @@
 import numpy as np
 from scipy import optimize 
 
-# 
-# betaClassification - classificacao das stocks entre alta volatilidade e baixa volatilidade
-# highLowVolatUpperBounds - limites superiores para a constraint de volatilidade (ex: 60%,40% - proporcao de baixa volat e alta volat)
-# highLowVolatLowerBounds - limites inferiores para constraint de volatilidade (ex: 1%,1% - proporcao de baixa volat e alta volat)
-# boundariesByBeta - limites maximos sabendo os valores dos betas
-def BiCriterionFunctionOptmzn(meanReturns, covarianceReturns, riskAverseParam, portifolioSize, betaClassification, highLowVolatUpperBounds, highLowVolatLowerBounds, boundariesByBeta):
+# @ param etaClassification - classificacao das stocks entre alta volatilidade e baixa volatilidade
+# @ param ighLowVolatUpperBounds - limites superiores para a constraint de volatilidade (ex: 60%,40% - proporcao de baixa volat e alta volat)
+# @ param ighLowVolatLowerBounds - limites inferiores para constraint de volatilidade (ex: 1%,1% - proporcao de baixa volat e alta volat)
+# @ param oundariesByBeta - limites maximos sabendo os valores dos betas
+def SLSQPSSolver(meanReturns, covarianceReturns, riskAverseParam, portifolioSize, betaClassification, boundariesByBeta):
     # definicao da funcao objetivo
-    def ConstraintEq(x):
-        A=np.ones(x.shape)
-        b=1
-        constraintVal = np.matmul(A,x.T)-b 
-        return constraintVal
-    
-    def ConstraintIneqUpBounds(x):
-        A = betaClassification
-        bUpBounds =np.array(highLowVolatUpperBounds).T
-        constraintValUpBounds = bUpBounds-np.matmul(A,x.T) 
-        return constraintValUpBounds
-
-    def ConstraintIneqLowBounds(x):
-        A = betaClassification
-        bLowBounds =np.array(highLowVolatLowerBounds).T
-        constraintValLowBounds = np.matmul(A,x.T)-bLowBounds  
-        return constraintValLowBounds
-    
     def fo(x, meanReturns, covarianceReturns, riskAverseParam, portifolioSize):
         PortfolioVariance = np.matmul(np.matmul(x, covarianceReturns), x.T) 
         PortfolioExpReturn = np.matmul(np.array(meanReturns),x.T)
         func = riskAverseParam * PortfolioVariance - (1-riskAverseParam)*PortfolioExpReturn
         return func
 
-    cons = ({'type': 'eq', 'fun':ConstraintEq}, \
+    # somatorio d todas tem que ser 1 (100%)
+    def ConstraintEq(x):
+        A = np.ones(x.shape)
+        b = 1
+        constraintVal = np.matmul(A,x.T)-b 
+        
+        return constraintVal
+    
+    def ConstraintIneqUpBounds(x):
+        A = betaClassification
+        bUpBounds = np.array([0.7,0.3]).T
+        constraintValUpBounds = bUpBounds-np.matmul(A,x.T) 
+        return constraintValUpBounds
+
+    def ConstraintIneqLowBounds(x):
+        A = betaClassification
+        bLowBounds = np.array([0.01, 0.01]).T
+        constraintValLowBounds = np.matmul(A,x.T)-bLowBounds  
+        return constraintValLowBounds
+
+    cons = ({'type': 'eq', 'fun': lambda x: np.sum(x)-1}, \
             {'type':'ineq', 'fun': ConstraintIneqUpBounds},\
             {'type':'ineq', 'fun': ConstraintIneqLowBounds})
-    # bnds = [(0,0.1),(0,0.1), (0,0.1), (0,0.1), (0,0.1), (0,1), (0,0.1), (0,1),\
-    #         (0,1), (0,0.1), (0,1),  (0,1),(0,1),(0,1),(0,1)]
-    options = {"disp": False, "maxiter": 50000}
-    optResponse = optimize.minimize(fo, x0 = np.repeat(0.01, portifolioSize), args = (meanReturns, covarianceReturns, riskAverseParam, portifolioSize), method = 'SLSQP',  bounds = boundariesByBeta, constraints = cons, tol = 10**-3, options=options)
-    # print(optResponse)
+    
+    optResponse = optimize.minimize(fo, x0 = np.repeat(0.01, portifolioSize), args = (meanReturns, covarianceReturns, riskAverseParam, portifolioSize), method = 'SLSQP',  bounds = boundariesByBeta, constraints = cons, tol = 10**-3)
+    print(optResponse)
     return optResponse
 
 

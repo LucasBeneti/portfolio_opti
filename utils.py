@@ -12,14 +12,6 @@ def SLSQPSSolver(meanReturns, covarianceReturns, riskAverseParam, portifolioSize
         PortfolioExpReturn = np.matmul(np.array(meanReturns),x.T)
         func = riskAverseParam * PortfolioVariance - (1-riskAverseParam)*PortfolioExpReturn
         return func
-
-    # somatorio d todas tem que ser 1 (100%)
-    def ConstraintEq(x):
-        A = np.ones(x.shape)
-        b = 1
-        constraintVal = np.matmul(A,x.T)-b 
-        
-        return constraintVal
     
     def ConstraintIneqUpBounds(x):
         A = betaClassification
@@ -38,7 +30,6 @@ def SLSQPSSolver(meanReturns, covarianceReturns, riskAverseParam, portifolioSize
             {'type':'ineq', 'fun': ConstraintIneqLowBounds})
     
     optResponse = optimize.minimize(fo, x0 = np.repeat(0.01, portifolioSize), args = (meanReturns, covarianceReturns, riskAverseParam, portifolioSize), method = 'SLSQP',  bounds = boundariesByBeta, constraints = cons, tol = 10**-3)
-    print("***** Version: 0.0.4 tol**-3 *****")
     print(optResponse)
     return optResponse
 
